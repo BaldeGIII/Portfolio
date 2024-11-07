@@ -1,0 +1,177 @@
+/* Prevent horizontal overflow on the body */
+body {
+  margin: 0;
+  overflow-x: hidden; /* Prevent scrolling on the whole page */
+}
+
+/* Global box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Ensure padding and border are included in width/height */
+}
+
+/* Wrapper container for the experience section */
+.experience-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  padding: clamp(1rem, 3vw, 2rem);
+  background-color: #242424;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden; /* Prevent horizontal scroll here */
+  position: relative;
+}
+
+/* Main experience content container */
+.experience {
+  display: flex;
+  gap: clamp(1rem, 3vw, 2rem);
+  width: 100%;
+  max-width: 100%; /* Ensures it doesn't exceed the viewport */
+  background: #242424;
+  color: #ffffff;
+  font-family: 'JetBrains Mono', monospace;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  justify-content: center; /* Ensure content stays centered */
+}
+
+/* Image wrapper ensures the image does not overflow */
+.experience-image-wrapper {
+  flex: 0 0 clamp(250px, 35vw, 400px);
+  max-width: 100%; /* Prevent image from overflowing */
+}
+
+/* Image style to ensure it adjusts well within the wrapper */
+.experience-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: clamp(4px, 0.5vw, 8px);
+}
+
+/* Content section that grows dynamically */
+.experience-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
+  width: 100%;
+}
+
+/* Title */
+.title {
+  font-size: clamp(1.25rem, 3vw, 2rem);
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Location styling */
+.location {
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Styling for the new date section */
+.date {
+    font-size: clamp(0.75rem, 1vw, 0.875rem); /* Same as the location font size */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+  }
+  
+
+/* Company name styling */
+.company {
+  font-size: clamp(0.875rem, 1.5vw, 1rem);
+  color: #ffffff;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Program name styling */
+.program {
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Description text */
+.description {
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  color: #ffffff;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Achievements list */
+.achievements {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 1vw, 0.75rem);
+}
+
+.achievements li {
+  position: relative;
+  padding-left: clamp(1rem, 1.5vw, 1.5rem);
+  font-size: clamp(0.75rem, 1vw, 0.875rem);
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.achievements li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+}
+
+/* Responsive adjustments for smaller screens */
+
+/* Adjustments for screens below 1024px */
+@media (max-width: 1024px) {
+  .experience {
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .experience-image-wrapper {
+    flex: 0 0 clamp(200px, 30vw, 300px);
+  }
+}
+
+/* Adjustments for screens below 768px */
+@media (max-width: 768px) {
+  .experience-wrapper {
+    padding: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .experience {
+    flex-direction: column;
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+
+  .experience-image-wrapper {
+    flex: none;
+    width: 100%;
+    max-width: clamp(200px, 50vw, 300px);
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+  }
+
+  .company {
+    font-size: clamp(0.8rem, 1.25vw, 0.875rem);
+  }
+}

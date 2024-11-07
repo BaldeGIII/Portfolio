@@ -1,0 +1,110 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    height: 100vh; /* Ensure the home section takes the full viewport height */
+    box-sizing: border-box;
+}
+
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the content horizontally */
+    max-width: 1200px;
+    width: 100%;
+    flex-direction: column; /* Default to column layout */
+    text-align: center; /* Center the text */
+}
+
+.home-text {
+    margin-top: 50px; /* Increase margin to create space between profile picture and text */
+    order: 2; /* Ensure the text appears after the profile picture */
+}
+
+.typing-animation {
+    font-size: 2.5rem;
+    font-family: "Courier New", Courier, monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.15em solid white; /* Blinking cursor */
+    animation:
+        typing 2s steps(23),
+        blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}
+
+.links {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.icon-button:hover .icon {
+    transform: scale(1.2);
+}
+
+.icon {
+    width: 48px; /* Adjust the size as needed */
+    height: 48px; /* Adjust the size as needed */
+    transition: transform 0.3s;
+}
+
+.profile-pic {
+    width: 300px; /* Adjust the size to be more reasonable */
+    height: 300px; /* Adjust the size to be more reasonable */
+    max-width: 100%;
+    border-radius: 50%; /* Ensure the image is circular */
+    margin-bottom: 50px; /* Increase margin to create space between profile picture and text */
+    order: 1; /* Ensure the profile picture appears before the text */
+}
+
+/* Media query for landscape mode */
+@media (orientation: landscape) {
+    .home-content {
+        flex-direction: row; /* Switch to row layout in landscape mode */
+        align-items: center; /* Center items vertically */
+        justify-content: center; /* Center items horizontally */
+        text-align: center; /* Center the text */
+    }
+
+    .home-text {
+        margin-top: 0; /* Reset margin */
+        padding-left: 60px; /* Increase padding to the left */
+        order: 2; /* Ensure the text appears after the profile picture */
+    }
+
+    .profile-pic {
+        margin-bottom: 0; /* Reset margin */
+        padding-right: 60px; /* Increase padding to the right */
+        order: 1; /* Ensure the profile picture appears before the text */
+    }
+}

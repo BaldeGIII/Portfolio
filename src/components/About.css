@@ -1,0 +1,94 @@
+.about {
+    display: flex;
+    flex-direction: column; /* Default to column layout */
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    width: 100%;
+    height: 100vh; /* Ensure the about section takes the full viewport height */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    margin-top: 2rem; /* Add top margin to create space below the nav bar */
+}
+
+.resume-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+    margin-top: 2rem; /* Add some space between the text and the PDF */
+    order: 2; /* Default order */
+}
+
+.about-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /* Center the text */
+    order: 1; /* Default order */
+}
+
+.about h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.about ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.about li {
+    margin-bottom: 0.5rem;
+}
+
+.responsive-iframe {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Ensure the iframe takes the full height of its container */
+    box-sizing: border-box; /* Ensure padding is included in the element's total width and height */
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove default iframe border */
+}
+
+/* Media query for landscape mode */
+@media (orientation: landscape) {
+    .about {
+        flex-direction: row; /* Switch to row layout in landscape mode */
+        justify-content: center; /* Center items horizontally */
+        align-items: center; /* Center items vertically */
+        height: 100vh; /* Ensure the about section takes the full viewport height in landscape mode */
+    }
+
+    .resume-container {
+        margin-top: 0; /* Remove top margin in landscape mode */
+        margin-left: 2rem; /* Add left margin in landscape mode */
+        order: 1; /* Swap order in landscape mode */
+        min-height: 80vh !important; /* Ensure a minimum height in landscape mode with higher specificity */
+        height: 80vh; /* Set explicit height in landscape mode */
+        padding: 2rem; /* Add padding to ensure space inside the container */
+    }
+
+    .about-content {
+        margin-right: 2rem; /* Add right margin in landscape mode */
+        text-align: center; /* Center the text */
+        order: 2; /* Swap order in landscape mode */
+    }
+}
