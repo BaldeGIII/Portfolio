@@ -4,6 +4,7 @@ import Contact from "./components/Contact";
 import Home from "./components/Home";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
+import './App.css';
 
 function App() {
   useEffect(() => {

@@ -6,7 +6,7 @@ const projects = [
     {
         title: "Aqua-Mundi",
         description: "An app called Aqua Mundi that informs the user what county in Texas a body of water is located and also informs a user on the endangered species know to inhabit that body of water.",
-        technologies: ["Python","","JavaScript","Android Studio"],
+        technologies: ["Python","JavaScript","Android Studio"],
         link:"https://github.com/godxrs/Aqua-Mundi",
     }
 ];
