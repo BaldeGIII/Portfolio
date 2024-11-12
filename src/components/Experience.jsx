@@ -33,24 +33,24 @@ const Experience = () => {
           
           <ul className="achievements">
             <li>
-              Spearheaded the development of an electronic Apprentice Lineman program, 
-              resulting in a 100% digital transformation and a 40% improvement in program 
-              accessibility and engagement.
+            Led the development of a fully digital Apprentice Lineman program, 
+            transforming a paper-based system into an interactive platform, 
+            enhancing access and engagement for over 100 apprentices and reducing onboarding time by 35%.
             </li>
             <li>
-              Collaborated with cross-functional teams to design and integrate requirements, 
-              testing, and administration portals on Power Apps and SharePoint, achieving 
-              a 30% increase in program efficiency and tracking capabilities.
+            Collaborated with IT, HR, and training teams to build and integrate requirements, 
+            testing, and administration portals on Power Apps and SharePoint, boosting program tracking 
+            and operational efficiency by 30%, enabling streamlined access for staff and apprentices.
             </li>
             <li>
-              Implemented data-driven process improvements, providing recommendations 
-              that enhanced program interactivity by 25%, directly benefiting both 
-              users and administrators.
+            Conducted targeted research to identify process improvements, implementing 
+            changes that increased program interactivity by 25% and optimized workflows, 
+            resulting in faster, more efficient processes for users and administrators.
             </li>
             <li>
-              Managed the digital rollout of the training program, ensuring a 100% 
-              user-friendly experience that aligned with the Cooperative's mission to 
-              deliver reliable, cost-effective services.
+            Managed the digital rollout of the training program, achieving a user-friendly 
+            experience aligned with the Cooperative’s mission; improvements led to projected cost 
+            savings of 20% due to reduced manual processes and enhanced digital adoption.
             </li>
           </ul>
         </div>
