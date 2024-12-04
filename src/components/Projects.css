@@ -53,7 +53,7 @@
     display: block;
     margin-top: 1rem;
     font-size: clamp(0.875rem, 1vw, 1rem);
-    color: #ff7f50;
+    color: #61dafb;
     text-decoration: none;
     transition: color 0.3s ease;
   }
