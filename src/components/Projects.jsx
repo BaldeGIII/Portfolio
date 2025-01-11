@@ -8,8 +8,16 @@ const projects = [
         description: "An app called Aqua Mundi that informs the user what county in Texas a body of water is located and also informs a user on the endangered species know to inhabit that body of water.",
         technologies: ["Python","JavaScript","Android Studio"],
         link:"https://github.com/godxrs/Aqua-Mundi",
+        image: "path/to/image.jpg" // Add the image path here
+    }, 
+    {
+      title: "Chip-8 Emulator",
+      description: "A Python-based CHIP-8 emulator implementing a complete set of opcodes to emulate the original system architecture. Features include instruction decoding, memory management, and graphics rendering.",
+      technologies: ["Python", "Assembly", "Binary", "Tkinter", "Pygame" ],
+      link: "https://github.com/godxrs/Chip-8Emulator"
     }
 ];
+
 const Projects = () => {
     return (
       <div className="projects-wrapper">
@@ -17,11 +25,16 @@ const Projects = () => {
         <div className="projects-list">
           {projects.map((project, index) => (
             <div key={index} className="project-card">
+              {project.image && (
+                <img src={project.image}className="project-image" />
+              )}
               <h3 className="project-title">{project.title}</h3>
-              <p className="project-description">{project.description}</p>
               <p className="project-technologies">
-                <strong>Technologies:</strong> {project.technologies.join(', ')}
+                <strong></strong> {project.technologies.map((tech, i) => (
+                  <span key={i} className={`tech-${tech.toLowerCase()}`}>{tech}</span>
+                )).reduce((prev, curr) => [prev, ', ', curr])}
               </p>
+              <p className="project-description">{project.description}</p>
               {project.embedLink ? (
                 <iframe 
                   src={project.embedLink} 
@@ -40,6 +53,6 @@ const Projects = () => {
         </div>
       </div>
     );
-  };
+};
 
 export default Projects;

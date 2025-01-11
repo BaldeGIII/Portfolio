@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
@@ -7,6 +7,22 @@ import Experience from "./components/Experience";
 import './App.css';
 
 function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Close menu when any scrolling happens
+      setMenuOpen(false);
+    };
+
+    // Only add scroll listener to window
+    window.addEventListener('scroll', handleScroll, true);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll, true);
+    };
+  }, []); // Remove menuOpen dependency
+
   useEffect(() => {
     const handleScroll = (event) => {
       const targetId = event.target.getAttribute("href").slice(1);
@@ -14,6 +30,7 @@ function App() {
       if (targetElement) {
         event.preventDefault();
         targetElement.scrollIntoView({ behavior: "smooth" });
+        setMenuOpen(false); // Close menu on link click
       }
     };
 
@@ -28,9 +45,25 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.nav-links') && !event.target.closest('.menu-button')) {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
+
   return (
     <div className="App">
-      <nav className="nav-links">
+      <button className="menu-button" onClick={() => setMenuOpen(!menuOpen)}>
+        &#9776;
+      </button>
+      <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
         <a href="#home">Home</a>
         <a href="#about">About Me</a>
         <a href="#experience">Experience</a>

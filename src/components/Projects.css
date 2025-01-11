@@ -47,6 +47,7 @@
   .project-technologies {
     font-size: clamp(0.75rem, 1vw, 0.875rem);
     margin-top: 0.5rem;
+    color: #61dafb; /* Changed color to blue */
   }
   
   .project-link, .project-embed {
@@ -81,4 +82,3 @@
       width: 100%;
     }
   }
-  
