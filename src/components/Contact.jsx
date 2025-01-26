@@ -1,4 +1,5 @@
 import { useState } from "react";
+import emailjs from 'emailjs-com';
 import "./Contact.css";
 
 const Contact = () => {
@@ -7,7 +8,6 @@ const Contact = () => {
     email: '',
     message: '',
   });
-
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -19,7 +19,17 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    emailjs.send(
+      process.env.REACT_APP_EMAILJS_SERVICE_ID,
+      process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+      formData,
+      process.env.REACT_APP_EMAILJS_USER_ID
+    )
+      .then((response) => {
+        console.log('SUCCESS!', response.status, response.text);
+      }, (err) => {
+        console.log('FAILED...', err);
+      });
   };
 
   return (

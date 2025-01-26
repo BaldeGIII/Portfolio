@@ -3,12 +3,15 @@ import React from "react";
 import "./Home.css";
 import githubIcon from "../assets/github-mark-white.png";
 import linkedinIcon from "../assets/linkedin-app-white-icon.webp";
-import profilePic from "../assets/profile.png"
+import profilePic from "../assets/67811850.png"
 
 const  Home = () => {
     return (
         <div className="home" id="home">
             <div className="home-content">
+                <div className="home-image">
+                    <img src={profilePic} alt="Profile" className="profile-pic" />
+                </div>
                 <div className="home-text">
                     <TypeAnimation
                     preRenderFirstString={true} 
@@ -47,9 +50,6 @@ const  Home = () => {
                             <img src={linkedinIcon} alt="LinkedIn" className="icon" />
                         </a>
                     </div>
-                </div>
-                <div className="home-image">
-                    <img src={profilePic} alt="Profile" className="profile-pic" />
                 </div>
             </div>
         </div>

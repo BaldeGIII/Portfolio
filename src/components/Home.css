@@ -19,7 +19,7 @@
 }
 
 .home-text {
-    margin-top: 50px; /* Increase margin to create space between profile picture and text */
+    margin-top: 20px; /* Adjust margin to create space between profile picture and text */
     order: 2; /* Ensure the text appears after the profile picture */
 }
 
@@ -83,7 +83,7 @@
     height: 300px; /* Adjust the size to be more reasonable */
     max-width: 100%;
     border-radius: 50%; /* Ensure the image is circular */
-    margin-bottom: 50px; /* Increase margin to create space between profile picture and text */
+    margin-bottom: 20px; /* Adjust margin to create space between profile picture and text */
     order: 1; /* Ensure the profile picture appears before the text */
 }
 
