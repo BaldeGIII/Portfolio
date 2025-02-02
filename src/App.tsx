@@ -70,20 +70,22 @@ function App() {
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
       </nav>
-      <div id="home" className="content">
-        <Home />
-      </div>
-      <div id="about" className="content">
-        <About />
-      </div>
-      <div id="experience" className="content">
-        <Experience />
-      </div>
-      <div id="projects" className="content">
-        <Projects />
-      </div>
-      <div id="contact" className="content">
-        <Contact />
+      <div className="content">
+        <div id="home">
+          <Home />
+        </div>
+        <div id="about">
+          <About />
+        </div>
+        <div id="experience">
+          <Experience />
+        </div>
+        <div id="projects">
+          <Projects />
+        </div>
+        <div id="contact">
+          <Contact />
+        </div>
       </div>
     </div>
   );

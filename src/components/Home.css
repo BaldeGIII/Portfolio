@@ -16,11 +16,14 @@
     width: 100%;
     flex-direction: column; /* Default to column layout */
     text-align: center; /* Center the text */
+    height: 100%; /* Ensure the content takes the full height */
 }
 
 .home-text {
     margin-top: 20px; /* Adjust margin to create space between profile picture and text */
     order: 2; /* Ensure the text appears after the profile picture */
+    flex: 1; /* Allow the text to take available space */
+    min-width: 0; /* Prevent the text from pushing the profile picture */
 }
 
 .typing-animation {
@@ -100,6 +103,8 @@
         margin-top: 0; /* Reset margin */
         padding-left: 60px; /* Increase padding to the left */
         order: 2; /* Ensure the text appears after the profile picture */
+        flex: 1; /* Allow the text to take available space */
+        min-width: 0; /* Prevent the text from pushing the profile picture */
     }
 
     .profile-pic {
@@ -107,4 +112,21 @@
         padding-right: 60px; /* Increase padding to the right */
         order: 1; /* Ensure the profile picture appears before the text */
     }
+}
+
+.bouncing-text {
+    position: fixed; /* Ensure the text is fixed to the viewport */
+    top: 50%; /* Start from the center */
+    left: 50%; /* Start from the center */
+    transform: translate(-50%, -50%); /* Center the text */
+    animation: bounce 5s infinite;
+}
+
+@keyframes bounce {
+    0% { transform: translate(-50%, -50%); }
+    20% { transform: translate(calc(1vw - 50%), calc(1vh - 50%)); }
+    40% { transform: translate(calc(-1vw - 50%), calc(1vh - 50%)); }
+    60% { transform: translate(calc(1vw - 50%), calc(-1vh - 50%)); }
+    80% { transform: translate(calc(-1vw - 50%), calc(-1vh - 50%)); }
+    100% { transform: translate(-50%, -50%); }
 }

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import "./About.css";
 
 const About = () => {
+    const [showMore, setShowMore] = useState(false);
     const skills = [
         {
             title: "Frameworks",
@@ -24,24 +25,31 @@ const About = () => {
                     Hello, I'm Baldemar Guajardo, I am passionate about AI, Machine Language, Deep Learning, Software Engineering
                     and Web Development. I am currently studying a Bachelor's degree in Computer Science and Minor in Electrical Engineering   
                     at the University of Texas Rio Grande Valley. I am a hardworking and dedicated individual
-                    who is always looking for new challenges and opportunities to learn and grow. 
+                    who is always looking for new challenges and opportunities to learn and grow.
+                    {showMore && (
+                        <span>
+                            I have experience in various frameworks, languages, and developer tools. I enjoy working on projects that challenge me to learn new skills and improve my existing ones.
+                        </span>
+                    )}
                 </p>
-            
-            <div className="skills-section">
-                <h2>Technical Skills</h2>
-                <div className="skills-container">
-                    {skills.map((category,index) => (
-                        <div key={index} className="skill-category">
-                            <h3>{category.title}</h3>
-                            <div className="skills-grid">
-                                {category.skills.map((skill, index) => (
-                                    <div key={index} className="skill">
-                                        {skill}
-                                    </div>
-                                ))}
+                {!showMore && (
+                    <button onClick={() => setShowMore(true)}>See More</button>
+                )}
+                <div className="skills-section">
+                    <h2>Technical Skills</h2>
+                    <div className="skills-container">
+                        {skills.map((category, index) => (
+                            <div key={index} className="skill-category">
+                                <h3>{category.title}</h3>
+                                <div className="skills-grid">
+                                    {category.skills.map((skill, index) => (
+                                        <div key={index} className="skill">
+                                            {skill}
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
                     </div>
                 </div>
             </div>

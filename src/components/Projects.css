@@ -1,84 +1,126 @@
 /* Projects.css */
 .projects-wrapper {
     width: 100%;
-    padding: 2rem;
+    padding: 0 20px;
     background-color: #1a1a1a;
     color: #ffffff;
-  }
-  
-  .projects-title {
+    overflow: hidden; /* Ensure no overflow */
+    max-height: 100vh; /* Limit height to viewport height */
+}
+
+.projects-title {
     font-size: clamp(1.5rem, 3vw, 2rem);
     font-weight: 700;
     margin-bottom: 2rem;
     text-align: center;
-  }
-  
-  .projects-list {
+}
+
+.projects-list {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: center;
-  }
-  
-  .project-card {
+    justify-content: space-between;
+    overflow-y: auto; /* Allow vertical scrolling within the list */
+    max-height: calc(100vh - 6rem); /* Adjust height to fit within viewport */
+}
+
+.project-card {
     background-color: #333;
     padding: 1.5rem;
     border-radius: 8px;
-    width: calc(33% - 2rem);
+    flex: 1 1 calc(33.333% - 20px);
+    margin: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
-  }
-  
-  .project-card:hover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.project-card:hover {
     transform: translateY(-10px);
-  }
-  
-  .project-title {
+}
+
+.project-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.project-title {
     font-size: clamp(1rem, 2vw, 1.25rem);
     font-weight: 600;
     margin: 0;
-  }
-  
-  .project-description {
-    font-size: clamp(0.875rem, 1vw, 1rem);
+    text-align: center;
+    margin-bottom: 0.5rem; /* Add space below the title */
+}
+
+.project-description {
+    font-size: 0.75rem; /* Make the description text smaller */
     margin-top: 1rem;
-  }
-  
-  .project-technologies {
+    text-align: center;
+    margin-bottom: 0.5rem; /* Add space below the description */
+    max-height: 3rem; /* Limit the height of the description */
+    overflow: hidden; /* Hide overflow text */
+    position: relative;
+}
+
+.project-description.show-more {
+    max-height: none; /* Remove height limit when showing more */
+}
+
+.project-technologies {
     font-size: clamp(0.75rem, 1vw, 0.875rem);
     margin-top: 0.5rem;
     color: #61dafb; /* Changed color to blue */
-  }
-  
-  .project-link, .project-embed {
+    text-align: center;
+    margin-bottom: 0.5rem; /* Add space below the technologies */
+}
+
+.project-link, .project-embed {
     display: block;
-    margin-top: 1rem;
+    margin-top: 0.5rem; /* Add space above the link */
     font-size: clamp(0.875rem, 1vw, 1rem);
     color: #61dafb;
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  .project-link:hover {
+    text-align: center;
+}
+
+.project-link:hover {
     color: #ffffff;
-  }
-  
-  .project-embed {
+}
+
+.project-embed {
     width: 100%;
     height: 200px;  /* Adjust height as needed */
     border: none;
     border-radius: 8px;
     overflow: hidden;
-  }
-  
-  @media (max-width: 1024px) {
+}
+
+.see-more {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.75rem;
+    color: #61dafb;
+    text-decoration: none;
+    text-align: left;
+}
+
+.see-more:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 1024px) {
     .project-card {
       width: calc(50% - 2rem);
     }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .project-card {
       width: 100%;
     }
-  }
+}
