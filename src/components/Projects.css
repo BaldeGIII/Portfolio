@@ -114,13 +114,13 @@
 }
 
 @media (max-width: 1024px) {
-    .project-card {
-      width: calc(50% - 2rem);
-    }
+  .projects-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
 }
 
 @media (max-width: 768px) {
-    .project-card {
-      width: 100%;
-    }
+  .projects-list {
+    grid-template-columns: 1fr;
+  }
 }
